@@ -3,8 +3,7 @@
     'name': "Modulos Odoo",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Esta aplicación es una prueba de funcionamiento.""",
 
     'description': """
         Media Shop Spain es una tienda de tecnología: Ordenadores, móviles, consolas.... ¡Tenemos de todo!
@@ -33,4 +32,5 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'application' : True,
 }
