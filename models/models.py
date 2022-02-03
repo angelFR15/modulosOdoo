@@ -35,7 +35,7 @@ class empleado(models.Model):
 	nombreEmpleado = fields.Char(string='Nombre', required=True)
 	fechaNacimiento = fields.Date(string='Fecha nacimiento', required=True, default=fields.date.today())
 	direccionEmpleado = fields.Char(string='Direccion', required=True)
-	telefonoEmpleado = fields.Char(string='Teléfono')
+	telefonoEmpleado = fields.Char(string='Telefono')
 
 class proyecto(models.Model):
 	_name = 'proyectos.proyecto'
@@ -43,6 +43,6 @@ class proyecto(models.Model):
 
 	#atributos
 	nombreProyecto = fields.Char(string='Nombre proyecto', required=True)
-	tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f', 'Front-End'),('b', 'Back-End')], help='Tipo de proyecto al que está destinado')
+	tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f', 'Front-End'),('b', 'Back-End')], help='Tipo de proyecto al que esta destinado')
 	ciudadProyecto = fields.Char(string='Ciudad')
-	descripcionProyecto = fields.Char(string='Descripción del proyecto')
+	descripcionProyecto = fields.Char(string='Descripcion del proyecto')

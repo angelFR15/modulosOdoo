@@ -3,11 +3,11 @@
     'name': "Modulos Odoo",
 
     'summary': """
-        Esta aplicación es una prueba de funcionamiento.""",
+        Esta aplicacion es una prueba de funcionamiento.""",
 
     'description': """
-        Media Shop Spain es una tienda de tecnología: Ordenadores, móviles, consolas.... ¡Tenemos de todo!
-        Por lo que necesitamos tener nuestros módulos actualizados.
+        Media Shop Spain es una tienda de tecnologia: Ordenadores, moviles, consolas.... Tenemos de todo!
+        Por lo que necesitamos tener nuestros mï¿½dulos actualizados.
     """,
 
     'author': "Angel MMS",
@@ -16,7 +16,7 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Tecnología',
+    'category': 'Tecnologï¿½a',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
