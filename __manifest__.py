@@ -7,7 +7,7 @@
 
     'description': """
         Media Shop Spain es una tienda de tecnologia: Ordenadores, moviles, consolas.... Tenemos de todo!
-        Por lo que necesitamos tener nuestros m�dulos actualizados.
+        Por lo que necesitamos tener nuestros modulos actualizados.
     """,
 
     'author': "Angel MMS",
@@ -16,7 +16,7 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Tecnolog�a',
+    'category': 'Tecnologia',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
