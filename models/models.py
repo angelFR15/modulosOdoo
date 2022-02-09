@@ -16,6 +16,7 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
+from typing_extensions import Required
 from odoo import models, fields, api
 
 class departamento(models.Model):
@@ -51,8 +52,9 @@ class proyecto(models.Model):
 	#atributos
 	nombreProyecto = fields.Char(string='Nombre proyecto', required=True)
 	tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f', 'Front-End'),('b', 'Back-End')], help='Tipo de proyecto al que esta destinado')
-	ciudadProyecto = fields.Char(string='Ciudad')
 	descripcionProyecto = fields.Char(string='Descripcion del proyecto')
+	fechaInicio = fields.Date(string="Fecha Inicio", Required=True, default=fields.date.today())
+	fechaFinal = fields.Date(string="Fecha Final", Required=True, default=fields.date.today())
 
 	#Relacion entre tablas
 	empleado_id = fields.Many2many('proyectos.empleado', string='Empleados')
