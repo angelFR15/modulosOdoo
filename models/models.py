@@ -16,7 +16,6 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
-from typing_extensions import Required
 from odoo import models, fields, api
 
 class departamento(models.Model):
