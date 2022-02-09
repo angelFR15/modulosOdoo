@@ -106,7 +106,7 @@
   </record>
   <record model="ir.actions.act_window" id="proyectos.departamento_action_window">
       <field name="name">Departamentos</field>
-      <field name="res_model">proyectos.departramento</field>
+      <field name="res_model">proyectos.departamento</field>
       <field name="view_mode">tree,form</field>
   </record>
   <record model="ir.actions.act_window" id="proyectos.proyecto_action_window">
