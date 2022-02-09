@@ -57,6 +57,7 @@
               action="proyectos.action_server"/>
 -->
 
+  <!-- vista empleado -->
   <record model="ir.ui.view" id="proyectos.empleado_list_view">
   <field name="name">proyectos.empleado.view.tree</field>
   <field name="model">proyectos.empleado</field>
@@ -77,12 +78,12 @@
   <field name="model">proyectos.departamento</field>
   <field name="arch" type="xml">
     <tree>
-      <field name="nombreDepartamento"/>
+      <field name="nombreDpto"/>
     </tree>
   </field>
   </record>
 
-<!-- vista empleado -->
+<!-- vista proyecto -->
   <record model="ir.ui.view" id="proyectos.proyecto_list_view">
   <field name="name">proyectos.proyecto.view.tree</field>
   <field name="model">proyectos.proyecto</field>
