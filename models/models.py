@@ -80,6 +80,6 @@ class proyecto(models.Model):
 		hoy = date.today()
 		for proyecto in self:
 			fechaI = proyecto.fechaInicio
-			dias = relativedelta(hoy, fechaI).days
+			dias = relativedelta(fechaI, hoy).days
 			if (dias < 0):
 				raise exceptions.ValidationError("La fecha no puede ser anterior a hoy.")
