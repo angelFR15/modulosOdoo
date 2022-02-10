@@ -59,28 +59,28 @@
 
   <!-- vista empleado -->
   <record model="ir.ui.view" id="proyectos.empleado_list_view">
-  <field name="name">proyectos.empleado.view.tree</field>
-  <field name="model">proyectos.empleado</field>
-  <field name="arch" type="xml">
-    <tree>
-      <field name="dniEmpleado"/>
-      <field name="nombreEmpleado"/>
-      <field name="fechaNacimiento"/>
-      <field name="direccionEmpleado"/>
-      <field name="telefonoEmpleado"/>
-    </tree>
-  </field>
+    <field name="name">proyectos.empleado.view.tree</field>
+    <field name="model">proyectos.empleado</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="dniEmpleado"/>
+        <field name="nombreEmpleado"/>
+        <field name="fechaNacimiento"/>
+        <field name="direccionEmpleado"/>
+        <field name="telefonoEmpleado"/>
+      </tree>
+    </field>
   </record>
 
   <!-- vista departamento -->
   <record model="ir.ui.view" id="proyectos.departamento_list_view">
-  <field name="name">proyectos.departamento.view.tree</field>
-  <field name="model">proyectos.departamento</field>
-  <field name="arch" type="xml">
-    <tree>
-      <field name="nombreDpto"/>
-    </tree>
-  </field>
+    <field name="name">proyectos.departamento.view.tree</field>
+    <field name="model">proyectos.departamento</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="nombreDpto"/>
+      </tree>
+    </field>
   </record>
 
 <!-- vista proyecto -->
@@ -117,7 +117,9 @@
 
   <menuitem name="Proyectos" id="proyectos.menu_root"/>
 
-  <menuitem name="Empleados" id="proyectos.menu_empleado" parent="proyectos.menu_root" action="proyectos.empleado"/>
-  <menuitem name="Menu 2" id="proyectos.menu_2" parent="proyectos.menu_root"/>
+  <menuitem name="Empleados" id="proyectos.menu_empleado" parent="proyectos.menu_root"/>
+  <menuitem name="Menu_2" id="proyectos.menu_2" parent="proyectos.menu_root"/>
+
+
   </data>
 </odoo>
