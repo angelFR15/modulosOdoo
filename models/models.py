@@ -52,8 +52,8 @@ class proyecto(models.Model):
 	nombreProyecto = fields.Char(string='Nombre proyecto', required=True)
 	tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f', 'Front-End'),('b', 'Back-End')], help='Tipo de proyecto al que esta destinado')
 	descripcionProyecto = fields.Char(string='Descripcion del proyecto')
-	fechaInicio = fields.Date(string="Fecha Inicio", Required=True, default=fields.date.today())
-	fechaFinal = fields.Date(string="Fecha Final", Required=True, default=fields.date.today())
+	fechaInicio = fields.Date(string="Fecha Inicio", Required=True)
+	fechaFinal = fields.Date(string="Fecha Final", Required=True)
 
 	#Relacion entre tablas
 	empleado_id = fields.Many2many('proyectos.empleado', string='Empleados')

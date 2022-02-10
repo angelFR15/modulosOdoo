@@ -98,7 +98,7 @@
   </field>
   </record>
 
-
+<!-- DEFINICION DE MUNUS -->
   <record model="ir.actions.act_window" id="proyectos.empleado_action_window">
       <field name="name">Empleados</field>
       <field name="res_model">proyectos.empleado</field>
@@ -117,8 +117,10 @@
 
   <menuitem name="Proyectos" id="proyectos.menu_root"/>
 
-  <menuitem name="Empleados" id="proyectos.menu_empleado" parent="proyectos.menu_root"/>
-  <menuitem name="Menu_2" id="proyectos.menu_2" parent="proyectos.menu_root"/>
+  <menuitem name="Empleados" id="proyectos.empleados_menu" parent="proyectos.menu_root" action="proyectos.empleado_action_window"/>
+  <menuitem name="Departamento" id="proyectos.departamento_menu" parent="proyectos.menu_root" action="proyectos.departamento_action_window"/>
+  <menuitem name="Proyectos" id="proyectos.proyecto_menu" parent="proyectos.menu_root" action="proyectos.proyecto_action_window"/>
+
 
   </data>
 </odoo>
