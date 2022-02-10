@@ -69,7 +69,7 @@ class proyecto(models.Model):
 	nombreProyecto = fields.Char(string='Nombre proyecto', required=True)
 	tipoProyecto = fields.Selection(string='Tipo de proyecto', selection=[('f', 'Front-End'),('b', 'Back-End')], help='Tipo de proyecto al que esta destinado')
 	descripcionProyecto = fields.Char(string='Descripcion del proyecto')
-	fechaInicio = fields.Date(string="Fecha Inicio", Required=True)
+	fechaInicio = fields.Date(string="Fecha Inicio", Required=True, compute='_checkFechaInicio')
 	fechaFinal = fields.Date(string="Fecha Final", Required=True)
 
 	#Relacion entre tablas
