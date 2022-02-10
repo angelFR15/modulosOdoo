@@ -16,7 +16,7 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 from datetime import date
 from dateutil.relativedelta import *
 
@@ -49,6 +49,14 @@ class empleado(models.Model):
 		for empleado in self:
 			empleado.edad = relativedelta(hoy, empleado.fechaNacimiento).years
 
+	@api.constrains('dniEmpleado')
+	def _checkDNI(self):
+		for empleado in self:
+			if (len(empleado.dniEmpleado) > 9):
+				raise exceptions.ValidationError("El DNI no puede contener mas de 9 caracteres.")
+			if (len(empleado.dniEmpleado) < 9)
+				raise exceptions.ValidationError("El DNI no puede contener menos de 9 caracteres.")
+
 	#Relacion entre tablas
 	departamento_id = fields.Many2one('proyectos.departamento', string='Departamento')
 	proyecto_id = fields.Many2many('proyectos.proyecto', string='Proyectos')
@@ -63,6 +71,15 @@ class proyecto(models.Model):
 	descripcionProyecto = fields.Char(string='Descripcion del proyecto')
 	fechaInicio = fields.Date(string="Fecha Inicio", Required=True)
 	fechaFinal = fields.Date(string="Fecha Final", Required=True)
+
+	@api.depends('fechaInicio')
+	def _checkFechaInicio(self):
+		hoy = date.today()
+		for proyecto in self:
+			proyecto.fechaInicio
+			dias = relativedelta(hoy, proyecto.fechaInicio).days
+			if (dias < 0):
+				raise.exceptions.ValidationError("La fecha no puede ser anterior a hoy.")
 
 	#Relacion entre tablas
 	empleado_id = fields.Many2many('proyectos.empleado', string='Empleados')
