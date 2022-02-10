@@ -120,6 +120,8 @@
   <menuitem name="Empleados" id="proyectos.menu_empleado" parent="proyectos.menu_root"/>
   <menuitem name="Menu_2" id="proyectos.menu_2" parent="proyectos.menu_root"/>
 
+  <menuitem name="Empleados" id="proyectos.menu_empleado_list" parent="proyectos.menu_root" action="proyectos.action_window"/>
+  <menuitem name="Menu_2" id="proyectos.menu_2_list" parent="proyectos.menu_root" action="proyectos.action_server"/>
 
   </data>
 </odoo>
