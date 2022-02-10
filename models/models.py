@@ -79,7 +79,7 @@ class proyecto(models.Model):
 	def _checkFechaInicio(self):
 		hoy = date.today()
 		for proyecto in self:
-			proyecto.fechaInicio
-			dias = relativedelta(hoy, proyecto.fechaInicio).days
+			fechaI = proyecto.fechaInicio
+			dias = relativedelta(hoy, fechaI).days
 			if (dias < 0):
 				raise exceptions.ValidationError("La fecha no puede ser anterior a hoy.")
