@@ -43,6 +43,10 @@ class empleado(models.Model):
 	telefonoEmpleado = fields.Char(string='Telefono')
 	edad = fields.Integer(string='Edad', compute='_getEdad')
 
+	#Relacion entre tablas
+	departamento_id = fields.Many2one('proyectos.departamento', string='Departamento')
+	proyecto_id = fields.Many2many('proyectos.proyecto', string='Proyectos')
+
 	@api.depends('fechaNacimiento')
 	def _getEdad(self):
 		hoy = date.today()
@@ -54,12 +58,8 @@ class empleado(models.Model):
 		for empleado in self:
 			if (len(empleado.dniEmpleado) > 9):
 				raise exceptions.ValidationError("El DNI no puede contener mas de 9 caracteres.")
-			if (len(empleado.dniEmpleado) < 9)
+			if (len(empleado.dniEmpleado) < 9):
 				raise exceptions.ValidationError("El DNI no puede contener menos de 9 caracteres.")
-
-	#Relacion entre tablas
-	departamento_id = fields.Many2one('proyectos.departamento', string='Departamento')
-	proyecto_id = fields.Many2many('proyectos.proyecto', string='Proyectos')
 
 class proyecto(models.Model):
 	_name = 'proyectos.proyecto'
@@ -72,6 +72,9 @@ class proyecto(models.Model):
 	fechaInicio = fields.Date(string="Fecha Inicio", Required=True)
 	fechaFinal = fields.Date(string="Fecha Final", Required=True)
 
+	#Relacion entre tablas
+	empleado_id = fields.Many2many('proyectos.empleado', string='Empleados')
+	
 	@api.depends('fechaInicio')
 	def _checkFechaInicio(self):
 		hoy = date.today()
@@ -80,6 +83,3 @@ class proyecto(models.Model):
 			dias = relativedelta(hoy, proyecto.fechaInicio).days
 			if (dias < 0):
 				raise exceptions.ValidationError("La fecha no puede ser anterior a hoy.")
-
-	#Relacion entre tablas
-	empleado_id = fields.Many2many('proyectos.empleado', string='Empleados')
