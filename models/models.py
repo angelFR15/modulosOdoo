@@ -61,11 +61,16 @@ class empleado(models.Model):
 			if (len(empleado.dniEmpleado) < 9):
 				raise exceptions.ValidationError("El DNI no puede contener menos de 9 caracteres.")
 
+	@api.constrains('telefonoEmpleado')
+	def _checkTelefono(self):
+		for empleado in self:
+			if (len(empleado.telefonoEmpleado) > 9 or len(empleado.telefonoEmpleado) < 9):
+				raise exceptions.ValidationError("El teléfono debe ser de 9 dígitos.")
+
 	@api.constrains('edad')
 	def _checkEdad(self):
 		for empleado in self:
-			edadE = empleado.edad
-			if (edadE < 18):
+			if (empleado.edad < 18):
 				raise exceptions.ValidationError("No puede ser menor de edad.")
 
 class proyecto(models.Model):
