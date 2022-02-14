@@ -86,7 +86,6 @@ class proyecto(models.Model):
 
 	@api.constrains('fechaFinal')
 	def _checkFechaFin(self):
-		hoy = date.today()
 		for proyecto in self:
 			fechaI = proyecto.fechaInicial
 			fechaF = proyecto.fechaFinal
