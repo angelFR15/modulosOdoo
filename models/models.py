@@ -61,6 +61,12 @@ class empleado(models.Model):
 			if (len(empleado.dniEmpleado) < 9):
 				raise exceptions.ValidationError("El DNI no puede contener menos de 9 caracteres.")
 
+	def _checkEdad(self):
+		for empleado in self:
+			edadE = empleado.edad
+			if (edadE < 18):
+				raise exceptions.ValidationError("No puede ser menor de edad.")
+
 class proyecto(models.Model):
 	_name = 'proyectos.proyecto'
 	_description = 'Atributos de un proyecto'
@@ -82,7 +88,7 @@ class proyecto(models.Model):
 			fechaI = proyecto.fechaInicio
 			dias = relativedelta(fechaI, hoy).days
 			if (dias < 0):
-				raise exceptions.ValidationError("La fecha inicial no puede ser anterior a hoy.")
+				raise exceptions.ValidationError("La fecha no puede ser anterior a hoy.")
 
 	@api.constrains('fechaFinal')
 	def _checkFechaFin(self):
