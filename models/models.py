@@ -82,7 +82,7 @@ class proyecto(models.Model):
 			fechaI = proyecto.fechaInicio
 			dias = relativedelta(fechaI, hoy).days
 			if (dias < 0):
-				raise exceptions.ValidationError("La fecha no puede ser anterior a hoy.")
+				raise exceptions.ValidationError("La fecha inicial no puede ser anterior a hoy.")
 
 	@api.constrains('fechaFinal')
 	def _checkFechaFin(self):
