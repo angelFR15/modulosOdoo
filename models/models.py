@@ -61,6 +61,7 @@ class empleado(models.Model):
 			if (len(empleado.dniEmpleado) < 9):
 				raise exceptions.ValidationError("El DNI no puede contener menos de 9 caracteres.")
 
+	@api.constrains('edad')
 	def _checkEdad(self):
 		for empleado in self:
 			edadE = empleado.edad
