@@ -52,8 +52,6 @@ class empleado(models.Model):
 		hoy = date.today()
 		for empleado in self:
 			empleado.edad = relativedelta(hoy, empleado.fechaNacimiento).years
-			if (empleado.edad < 18):
-				raise exceptions.ValidationError("No puede ser menor de edad.")
 
 	@api.constrains('dniEmpleado')
 	def _checkDNI(self):
@@ -68,7 +66,12 @@ class empleado(models.Model):
 		for empleado in self:
 			if (len(empleado.telefonoEmpleado) > 9 or len(empleado.telefonoEmpleado) < 9):
 				raise exceptions.ValidationError("El teléfono debe ser de 9 dígitos.")
-			
+
+	@api.constrains('edad')
+	def _checkEdad(self):
+		for empleado in self:
+			if (empleado.edad < 18):
+				raise exceptions.ValidationError("No puede ser menor de edad.")
 
 class proyecto(models.Model):
 	_name = 'proyectos.proyecto'
