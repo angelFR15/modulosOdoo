@@ -87,7 +87,7 @@ class proyecto(models.Model):
 	@api.constrains('fechaFinal')
 	def _checkFechaFin(self):
 		for proyecto in self:
-			fechaI = proyecto.fechaInicial
+			fechaI = proyecto.fechaInicio
 			fechaF = proyecto.fechaFinal
 			if (fechaF < fechaI):
 				raise exceptions.ValidationError("La fecha final no puede ser anterior a la fecha de inicio.")
