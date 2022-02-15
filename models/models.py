@@ -70,7 +70,7 @@ class empleado(models.Model):
 				raise exceptions.ValidationError("El teléfono debe ser de 9 dígitos.")
 			
 
-	@api.constrains('edad')
+	@api.constrains('fechaNacimiento')
 	def _checkEdad(self):
 		for empleado in self:
 			if (empleado.edad < 18):
