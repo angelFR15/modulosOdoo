@@ -16,7 +16,7 @@
                     <div class="page">
                         <h2>INFORME DEPARTAMENTO</h2>
                         <h3 t-field="departamento.nombreDpto"/>
-                            <table>
+                            <table class="table table-sm o_main_table">
                                 <thead>
                                     <th>DNI</th>
                                     <th>NOMBRE</th>
