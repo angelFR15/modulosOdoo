@@ -15,7 +15,7 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <h2>INFORME DEPARTAMENTO</h2>
-                        <h3 t-field="proyectos.nombreDpto"/>                        
+                        <h3 t-field="departamento.nombreDpto"/>
                             <table>
                                 <thead>
                                     <th>DNI</th>
@@ -33,6 +33,18 @@
                                             </td>
                                             <td>
                                                 <span t-field="empleado.nombreEmpleado"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="empleado.fechaNacimiento"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="empleado.edad"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="empleado.direccionEmpleado"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="empleado.telefonoEmpleado"/>
                                             </td>
                                         </tr>
                                     </t>
