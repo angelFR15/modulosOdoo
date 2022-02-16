@@ -15,6 +15,11 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <h2>INFORME DEPARTAMENTO</h2>
+                        <h3 t-field="proyectos.departamento"/>
+                        <t t-foreach="departamento.empleado_id" t-as="empleado">
+                            <span t-field="empleado.dniEmpleado"/>
+                            <span t-field="empleado.nombreEmpleado"/>
+                        </t>
                     </div>
                 </t>
             </t>
