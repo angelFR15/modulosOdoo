@@ -64,10 +64,10 @@ class empleado(models.Model):
 	@api.constrains('telefonoEmpleado')
 	def _checkTelefono(self):
 		for empleado in self:
-			if(empleado.telefonoEmpleado is None):
-				raise exceptions.ValidationError("El teléfono debe ser de 9 dígitos.")
 			if (len(empleado.telefonoEmpleado) > 9 or len(empleado.telefonoEmpleado) < 9):
 				raise exceptions.ValidationError("El teléfono debe ser de 9 dígitos.")
+			#if(empleado.telefonoEmpleado is None):
+				#raise exceptions.ValidationError("El teléfono debe ser de 9 dígitos.")
 			
 
 	@api.constrains('fechaNacimiento')
