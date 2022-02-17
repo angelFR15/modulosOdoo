@@ -18,7 +18,7 @@
                         <h3 t-field="proyecto.nombreProyecto"/>
                         <table class="table table-sm o_main_table">
                             <thead>
-                                <th>NOMBRE</th>
+                                <th>EMPLEADO</th>
                                 <th>TIPO</th>
                                 <th>DESCRIPCION</th>
                                 <th>FECHA INICIO</th>
@@ -28,7 +28,7 @@
                                 <t t-foreach="proyecto.empleado_id" t-as="empleado">
                                     <tr>
                                         <td>
-                                            <span t-field="proyecto.nombreProyecto"/>
+                                            <span t-field="proyecto.empleado_id"/>
                                         </td>
                                         <td>
                                             <span t-field="proyecto.tipoProyecto"/>
