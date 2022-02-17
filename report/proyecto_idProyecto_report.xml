@@ -28,7 +28,7 @@
                                 <t t-foreach="proyecto.empleado_id" t-as="empleado">
                                     <tr>
                                         <td>
-                                            <span t-field="proyecto.empleado_id"/>
+                                            <span t-field="empleado.nombreEmpleado"/>
                                         </td>
                                         <td>
                                             <span t-field="proyecto.tipoProyecto"/>
