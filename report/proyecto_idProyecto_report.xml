@@ -1,0 +1,55 @@
+<odoo>
+    <record id="proyectos.idProyecto_report" model="ir.actions.report">
+        <field name="name">Informe Proyecto</field>
+        <field name="model">proyectos.proyecto</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">proyectos.proyecto_report_view</field>
+        <field name="report_file">proyectos.proyecto_report</field>
+        <field name="binding_model_id" ref="model_proyectos_proyecto"/>
+        <field name="binding_type">report</field>                
+    </record>
+
+    <template id="proyecto_report_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="proyecto">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>INFORME PROYECTO</h2>
+                        <h3 t-field="proyecto.nombreProyecto"/>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <th>NOMBRE</th>
+                                <th>TIPO</th>
+                                <th>DESCRIPCION</th>
+                                <th>FECHA INICIO</th>
+                                <th>FECHA FIN</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="proyecto.empleado_id" t-as="empleado">
+                                    <tr>
+                                        <td>
+                                            <span t-field="proyecto.nombreProyecto"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="proyecto.tipoProyecto"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="proyecto.descripcionProyecto"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="proyecto.fechaInicio"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="proyecto.fechaFinal"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
