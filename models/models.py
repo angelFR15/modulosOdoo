@@ -44,7 +44,7 @@ class empleado(models.Model):
 	edad = fields.Integer(string='Edad', compute='_getEdad')
 
 	#Relacion entre tablas
-	departamento_id = fields.Many2one('proyectos.departamento.nombreDpto', string='Departamento')
+	departamento_id = fields.Many2one('proyectos.departamento', string='Departamento')
 	proyecto_id = fields.Many2many('proyectos.proyecto', string='Proyectos')
 
 	@api.depends('fechaNacimiento')
