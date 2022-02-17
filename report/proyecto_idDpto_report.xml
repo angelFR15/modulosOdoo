@@ -16,40 +16,40 @@
                     <div class="page">
                         <h2>INFORME DEPARTAMENTO</h2>
                         <h3 t-field="departamento.nombreDpto"/>
-                            <table class="table table-sm o_main_table">
-                                <thead>
-                                    <th>DNI</th>
-                                    <th>NOMBRE</th>
-                                    <th>FECHA NACIMIENTO</th>
-                                    <th>EDAD</th>
-                                    <th>DIRECCIÓN</th>
-                                    <th>TELÉFONO</th>
-                                </thead>
-                                <tbody>
-                                    <t t-foreach="departamento.empleado_id" t-as="empleado">
-                                        <tr>
-                                            <td>
-                                                <span t-field="empleado.dniEmpleado"/>
-                                            </td>
-                                            <td>
-                                                <span t-field="empleado.nombreEmpleado"/>
-                                            </td>
-                                            <td>
-                                                <span t-field="empleado.fechaNacimiento"/>
-                                            </td>
-                                            <td>
-                                                <span t-field="empleado.edad"/>
-                                            </td>
-                                            <td>
-                                                <span t-field="empleado.direccionEmpleado"/>
-                                            </td>
-                                            <td>
-                                                <span t-field="empleado.telefonoEmpleado"/>
-                                            </td>
-                                        </tr>
-                                    </t>
-                                </tbody>
-                            </table>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <th>DNI</th>
+                                <th>NOMBRE</th>
+                                <th>FECHA NACIMIENTO</th>
+                                <th>EDAD</th>
+                                <th>DIRECCIÓN</th>
+                                <th>TELÉFONO</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="departamento.empleado_id" t-as="empleado">
+                                    <tr>
+                                        <td>
+                                            <span t-field="empleado.dniEmpleado"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="empleado.nombreEmpleado"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="empleado.fechaNacimiento"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="empleado.edad"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="empleado.direccionEmpleado"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="empleado.telefonoEmpleado"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
                     </div>
                 </t>
             </t>
