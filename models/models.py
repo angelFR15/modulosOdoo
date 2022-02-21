@@ -30,6 +30,11 @@ class departamento(models.Model):
 	#Relacion entre tablas
 	empleado_id = fields.One2many('proyectos.empleado','departamento_id', string='Departamento')
 
+	def name_get(self):
+		listaDptos = []
+		for departamento in self:
+			listaDptos.append(departamento.id,departamento.nombreDpto)
+		return listaDptos
 
 class empleado(models.Model):
 	_name = 'proyectos.empleado'
