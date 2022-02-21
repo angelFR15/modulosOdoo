@@ -115,7 +115,7 @@
       <field name="view_mode">tree,form</field>
   </record>
 
-  <menuitem name="Proyectos AFR" id="proyectos.menu_root"/>
+  <menuitem name="Proyectos AFR" id="proyectos.menu_root" web_icon="proyectos,static/description/logotipo.png"/>
 
   <menuitem name="Empleados" id="proyectos.empleados_menu" parent="proyectos.menu_root" action="proyectos.empleado_action_window"/>
   <menuitem name="Departamento" id="proyectos.departamento_menu" parent="proyectos.menu_root" action="proyectos.departamento_action_window"/>
