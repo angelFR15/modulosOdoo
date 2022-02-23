@@ -1,52 +1,5 @@
 <odoo>
   <data>
-    <!-- vista horario -->
-    <record model="ir.ui.view" id="horarios.horario_list_view">
-    <field name="name">horarios.horario.view.tree</field>
-    <field name="model">horarios.horario</field>
-    <field name="arch" type="xml">
-      <tree>
-        <field name="nombreHorario"/>
-        <field name="lunesEntrada"/>
-        <field name="lunesSalida"/>
-      </tree>
-    </field>
-  </record>
-
-<!-- DEFINICION DE MUNUS -->
-  <record model="ir.actions.act_window" id="horarios.horario_action_window">
-      <field name="name">Horario</field>
-      <field name="model">horarios.horario</field>
-      <field name="arch" type="xml">
-        <form>
-          <sheet>
-            <div class="oe_button_box">
-              <BUTTONS/>
-            </div>
-            <group>
-              <group>
-                <h1>VISTA HORARIOS</h1>
-              </group>
-            </group>
-            <notebook>
-              <page string="Page1">
-                <group col="2">
-                  <field name="lunesEntrada" widget="timepicker" options="{'datepicker':{'stepping':'15'}}" style="width:10%%"/>
-                  <field name="lunesSalida"/>
-                </group>
-              </page>
-              <page string="Page2">
-                <group>
-                  <CONTENT/>
-                </group>
-              </page>
-            </notebook>
-          </sheet>
-        </form>
-      </field>
-  </record>
-
-  <menuitem name="Horarios AFR" id="horarios.menu_root"/>
-  <menuitem name="Horario" id="horarios.horario_menu" parent="horarios.menu_root" action="horarios.horario_action_window"/>
+    
   </data>
 </odoo>

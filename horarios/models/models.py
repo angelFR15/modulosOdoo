@@ -16,16 +16,3 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
-from odoo import models, fields, api
-
-class horario(models.Model):
-    _name = 'horarios.horario'
-    _description = 'horarios.horario'
-
-    #atrib
-    nombreHorario = fields.Char(string='Nombre horario', required=True)
-    lunesEntrada = fields.Date(string='Hora entrada Lunes')
-    lunesSalida = fields.Date(string='Hora entrada Lunes')
-
-    #relacion entre tablas
-    empleado_id = fields.One2mane('proyectos.empleado', 'horario_id', string="Horario")
