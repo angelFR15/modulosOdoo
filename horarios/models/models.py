@@ -17,14 +17,15 @@
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 from odoo import models, fields, api, exceptions
-from datetime import date
-from dateutil.relativedelta import *
-
-from proyectos.models.models import empleado
 
 class horario(models.Model):
-	_name = 'horarios.horario'
-	_description = 'Define un horario'
+    _name = 'horarios.horario'
+    _description = 'horarios.horario'
 
-	#atributos
-	nombreHorario = fields.Char(string='Nombre horario', required=True)
+    #atrib
+    nombreHorario = fields.Char(string='Nombre horario', required=True)
+    lunesEntrada = fields.Date(string='Hora entrada Lunes')
+    lunesSalida = fields.Date(string='Hora entrada Lunes')
+
+    #relacion entre tablas
+    empleado_id = fields.One2mane('proyectos.empleado', 'horario_id', string="Horario")
