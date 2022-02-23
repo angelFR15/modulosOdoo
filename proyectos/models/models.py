@@ -16,6 +16,7 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
+from typing_extensions import StrictTypeGuard
 from odoo import models, fields, api, exceptions
 from datetime import date
 from dateutil.relativedelta import *
@@ -51,6 +52,8 @@ class empleado(models.Model):
 	#Relacion entre tablas
 	departamento_id = fields.Many2one('proyectos.departamento', string='Departamento')
 	proyecto_id = fields.Many2many('proyectos.proyecto', string='Proyectos')
+
+	horario_id = fields.Many2one('horarios.horario', string='Horarios')
 
 	@api.depends('fechaNacimiento')
 	def _getEdad(self):

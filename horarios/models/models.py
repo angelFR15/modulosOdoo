@@ -20,6 +20,8 @@ from odoo import models, fields, api, exceptions
 from datetime import date
 from dateutil.relativedelta import *
 
+from proyectos.models.models import empleado
+
 class horario(models.Model):
 	_name = 'horarios.horario'
 	_description = 'Define un horario'
