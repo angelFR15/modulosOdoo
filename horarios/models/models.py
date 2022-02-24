@@ -28,6 +28,14 @@ class horarios(models.Model):
     nombreHorario = fields.Char(string='Nombre horario', required = True)
     lunesEntrada = fields.Date (string='Hora entrada Lunes')
     lunesSalida = fields.Date(string='Hora salida Lunes')
+    martesEntrada = fields.Date (string='Hora entrada Martes')
+    martesSalida = fields.Date(string='Hora salida Martes')
+    miercolesEntrada = fields.Date (string='Hora entrada Miercoles')
+    miercolesSalida = fields.Date(string='Hora salida Miercoles')
+    juevesEntrada = fields.Date (string='Hora entrada Jueves')
+    juevesSalida = fields.Date(string='Hora salida Jueves')
+    viernesEntrada = fields.Date (string='Hora entrada Lunes')
+    viernesSalida = fields.Date(string='Hora salida Lunes')
 
     #relacion con tabla empleados
     empleado_id = fields.One2many('proyectos.empleado','horario_id')
