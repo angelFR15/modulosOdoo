@@ -7,6 +7,8 @@
       <field name="arch" type="xml">
         <tree>
           <field name="nombreHorario"/>
+          <field name="lunesEntrada"/>
+          <field name="lunesSalida"/>
         </tree>
       </field>
     </record>
