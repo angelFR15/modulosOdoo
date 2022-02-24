@@ -17,7 +17,7 @@
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 from odoo import models, fields, api, exceptions
-from datetime import date
+from datetime import date, datetime
 from dateutil.relativedelta import *
 
 class horarios(models.Model):
@@ -27,16 +27,16 @@ class horarios(models.Model):
     #atributos
     nombreHorario = fields.Char(string='Nombre horario', required = True)
 
-    lunesEntrada = fields.Date (string='Hora entrada lunes', selection='_get_valid_hours', default='8.5')
-    lunesSalida = fields.Date(string='Hora salida lunes', selection='_get_valid_hours', default='8.5')
-    martesEntrada = fields.Date (string='Hora entrada martes', selection='_get_valid_hours', default='8.5')
-    martesSalida = fields.Date(string='Hora salida martes', selection='_get_valid_hours', default='8.5')
-    miercolesEntrada = fields.Date (string='Hora entrada miercoles', selection='_get_valid_hours', default='8.5')
-    miercolesSalida = fields.Date(string='Hora salida miercoles', selection='_get_valid_hours', default='8.5')
-    juevesEntrada = fields.Date (string='Hora entrada jueves', selection='_get_valid_hours', default='8.5')
-    juevesSalida = fields.Date(string='Hora salida jueves', selection='_get_valid_hours', default='8.5')
-    viernesEntrada = fields.Date (string='Hora entrada viernes', selection='_get_valid_hours', default='8.5')
-    viernesSalida = fields.Date(string='Hora salida viernes', selection='_get_valid_hours', default='8.5')
+    lunesEntrada = fields.Date (string='Hora entrada lunes', selection='_get_valid_hours', default='8:30')
+    lunesSalida = fields.Date(string='Hora salida lunes', selection='_get_valid_hours', default='8:30')
+    martesEntrada = fields.Date (string='Hora entrada martes', selection='_get_valid_hours', default='8:30')
+    martesSalida = fields.Date(string='Hora salida martes', selection='_get_valid_hours', default='8:30')
+    miercolesEntrada = fields.Date (string='Hora entrada miercoles', selection='_get_valid_hours', default='8:30')
+    miercolesSalida = fields.Date(string='Hora salida miercoles', selection='_get_valid_hours', default='8:30')
+    juevesEntrada = fields.Date (string='Hora entrada jueves', selection='_get_valid_hours', default='8:30')
+    juevesSalida = fields.Date(string='Hora salida jueves', selection='_get_valid_hours', default='8:30')
+    viernesEntrada = fields.Date (string='Hora entrada viernes', selection='_get_valid_hours', default='8:30')
+    viernesSalida = fields.Date(string='Hora salida viernes', selection='_get_valid_hours', default='8:30')
 
     #relacion con tabla empleados
     empleado_id = fields.One2many('proyectos.empleado','horario_id')
@@ -57,3 +57,7 @@ class horarios(models.Model):
             ('18', '18:00')
         ]
         return selection
+
+    @api.onchange('lunesEntrada','lunesSalida')
+    def change_data_field(self):
+        he : datetime.strptime(self.lunesEntrada, '%H:%M').time()
