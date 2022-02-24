@@ -17,7 +17,6 @@
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 #from typing_extensions import StrictTypeGuard
-from typing_extensions import StrictTypeGuard
 from odoo import models, fields, api, exceptions
 from datetime import date
 from dateutil.relativedelta import *
