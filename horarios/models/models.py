@@ -29,4 +29,4 @@ class horario(models.Model):
     lunesSalida = fields.Date(string='Hora salida Lunes')
 
     #relacion entre tablas
-    empleado_id = fileds.One2many('proyectos.empleado', 'horario_id')
+    #empleado_id = fileds.One2many('proyectos.empleado', 'horario_id')

@@ -29,7 +29,7 @@ class departamento(models.Model):
 	nombreDpto = fields.Char(string='Nombre departamento', required=True)
 
 	#Relacion entre tablas
-	empleado_id = fields.One2many('proyectos.empleado','departamento_id', string='Departamento')
+	#empleado_id = fields.One2many('proyectos.empleado','departamento_id', string='Departamento')
 
 	def name_get(self):
 		listaDptos = []
