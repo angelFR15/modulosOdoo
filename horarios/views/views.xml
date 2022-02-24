@@ -37,7 +37,7 @@
                   <field name="empleado_id"/>
                 </group>
                 <group col="2">
-                  <field name="lunesEntrada"style="width:10%%"/>
+                  <field name="lunesEntrada" style="width:10%%"/>
                   <field name="lunesSalida" style="width:10%%"/>
                 </group>
                 <group col="2">
