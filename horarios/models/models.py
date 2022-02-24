@@ -16,7 +16,7 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
-from typing_extensions import Required
+#from typing_extensions import Required
 
 
 class horario(models.Model):
