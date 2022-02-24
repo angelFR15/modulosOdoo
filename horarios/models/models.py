@@ -27,16 +27,16 @@ class horarios(models.Model):
     #atributos
     nombreHorario = fields.Char(string='Nombre horario', required = True)
 
-    lunesEntrada = fields.Date (string='Hora entrada lunes', selection='_get_valid_hours', default='8:30')
-    lunesSalida = fields.Date(string='Hora salida lunes', selection='_get_valid_hours', default='8:30')
-    martesEntrada = fields.Date (string='Hora entrada martes', selection='_get_valid_hours', default='8:30')
-    martesSalida = fields.Date(string='Hora salida martes', selection='_get_valid_hours', default='8:30')
-    miercolesEntrada = fields.Date (string='Hora entrada miercoles', selection='_get_valid_hours', default='8:30')
-    miercolesSalida = fields.Date(string='Hora salida miercoles', selection='_get_valid_hours', default='8:30')
-    juevesEntrada = fields.Date (string='Hora entrada jueves', selection='_get_valid_hours', default='8:30')
-    juevesSalida = fields.Date(string='Hora salida jueves', selection='_get_valid_hours', default='8:30')
-    viernesEntrada = fields.Date (string='Hora entrada viernes', selection='_get_valid_hours', default='8:30')
-    viernesSalida = fields.Date(string='Hora salida viernes', selection='_get_valid_hours', default='8:30')
+    lunesEntrada = fields.Selection(string='Hora entrada lunes', selection='_get_valid_hours', default='8:30')
+    lunesSalida = fields.Selection(string='Hora salida lunes', selection='_get_valid_hours', default='8:30')
+    martesEntrada = fields.Selection(string='Hora entrada martes', selection='_get_valid_hours', default='8:30')
+    martesSalida = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8:30')
+    miercolesEntrada = fields.Selection(string='Hora entrada miercoles', selection='_get_valid_hours', default='8:30')
+    miercolesSalida = fields.Selection(string='Hora salida miercoles', selection='_get_valid_hours', default='8:30')
+    juevesEntrada = fields.Selection(string='Hora entrada jueves', selection='_get_valid_hours', default='8:30')
+    juevesSalida = fields.Selection(string='Hora salida jueves', selection='_get_valid_hours', default='8:30')
+    viernesEntrada = fields.Selection(string='Hora entrada viernes', selection='_get_valid_hours', default='8:30')
+    viernesSalida = fields.Selection(string='Hora salida viernes', selection='_get_valid_hours', default='8:30')
 
     #relacion con tabla empleados
     empleado_id = fields.One2many('proyectos.empleado','horario_id')
@@ -60,4 +60,5 @@ class horarios(models.Model):
 
     @api.onchange('lunesEntrada','lunesSalida')
     def change_data_field(self):
-        he : datetime.strptime(self.lunesEntrada, '%H:%M').time()
+        hel : datetime.strptime(self.lunesEntrada, '%H:%M').time()
+        hsl : datetime.strptime(self.lunesSalida, '%H:%M').time()
