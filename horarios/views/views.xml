@@ -46,7 +46,7 @@
                 </group>
                 <group col="2">
                   <field name="miercolesEntrada" widget="timepicker" options="{'datepicker':{'stepping':30}}" style="width:10%%"/>
-                  <field name="miercolesSalida" style="width:10%%"/>
+                  <field name="miercolesSalida" widget="timepicker" options="{'datepicker':{'stepping':30}}" style="width:10%%"/>
                 </group>
                 <group col="2">
                   <field name="juevesEntrada" widget="timepicker" options="{'datepicker':{'stepping':30}}" style="width:10%%"/>
