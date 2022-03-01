@@ -27,16 +27,16 @@ class horarios(models.Model):
     #atributos
     nombreHorario = fields.Char(string='Nombre horario', required = True)
 
-    lunesEntrada = fields.Selection(string='Hora entrada lunes', selection='_get_valid_hours', default='8')
-    lunesSalida = fields.Selection(string='Hora salida lunes', selection='_get_valid_hours', default='8')
-    martesEntrada = fields.Selection(string='Hora entrada martes', selection='_get_valid_hours', default='8')
+    lunesEntrada = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8')
+    lunesSalida = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8')
+    martesEntrada = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8')
     martesSalida = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8')
-    miercolesEntrada = fields.Selection(string='Hora entrada miercoles', selection='_get_valid_hours', default='8')
-    miercolesSalida = fields.Selection(string='Hora salida miercoles', selection='_get_valid_hours', default='8')
-    juevesEntrada = fields.Selection(string='Hora entrada jueves', selection='_get_valid_hours', default='8')
-    juevesSalida = fields.Selection(string='Hora salida jueves', selection='_get_valid_hours', default='8')
-    viernesEntrada = fields.Selection(string='Hora entrada viernes', selection='_get_valid_hours', default='8')
-    viernesSalida = fields.Selection(string='Hora salida viernes', selection='_get_valid_hours', default='8')
+    miercolesEntrada = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8')
+    miercolesSalida = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8')
+    juevesEntrada = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8')
+    juevesSalida = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8')
+    viernesEntrada = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8')
+    viernesSalida = fields.Selection(string='Hora salida martes', selection='_get_valid_hours', default='8')
 
     #relacion con tabla empleados
     empleado_id = fields.One2many('proyectos.empleado','horario_id')
