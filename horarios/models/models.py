@@ -60,7 +60,7 @@ class horarios(models.Model):
 
     @api.constrains('lunesEntrada','lunesSalida')
     def change_data_field(self):
-        hel : datetime.strptime(self.lunesEntrada, '%H:%M').time()
-        hsl : datetime.strptime(self.lunesSalida, '%H:%M').time()
+        hel = float(self.lunesEntrada)
+        hsl = float(self.lunesSalida)
         if(hel >= hsl):
-            raise exceptions.ValidationError("No puede ser anterior la hora de salida a la de entrada.")
+            raise exceptions.ValidationError("No puede ser anterior o igual la hora de salida a la de entrada.")
