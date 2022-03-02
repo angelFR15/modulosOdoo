@@ -69,6 +69,7 @@
         <field name="direccionEmpleado"/>
         <field name="telefonoEmpleado"/>
         <field name="horario_id"/>
+        <field name="baja_id"/>
       </tree>
     </field>
   </record>
