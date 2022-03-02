@@ -54,6 +54,12 @@ class empleado(models.Model):
 	proyecto_id = fields.Many2many('proyectos.proyecto', string='Proyectos')
 	horario_id = fields.Many2one('horarios.horario', string='Horarios')
 	baja_id = fields.Many2one('horarios.baja', string='Baja')
+	
+	def name_get(self):
+		resultados=[]
+		for empleado in self:
+			resultados.append((empleado.id, empleado.nombreEmpleado))
+		return resultados
 
 	@api.depends('fechaNacimiento')
 	def _getEdad(self):

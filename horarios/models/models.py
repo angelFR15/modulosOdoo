@@ -24,8 +24,8 @@ class bajas(models.Model):
     _name = 'horarios.bajas'
     _description = 'Define los atributos de la baja'
 
-    motivoBaja = fields.Selection(string='Motivo de la baja:', Selection=[('a','Enfermedad'),('b','Maternidad'),('c','Paternidad'),('d','Accidente')])
-    gravedadBaja = fields.Selection(string='Gravedad de la baja:',Selection=[('a','Muy grave'),('b','Grave'),('c','Normal'),('d','Leve')])
+    motivoBaja = fields.Selection(string='Motivo de la baja:', selection=[('a','Enfermedad'),('b','Maternidad'),('c','Paternidad'),('d','Accidente')])
+    gravedadBaja = fields.Selection(string='Gravedad de la baja:',selection=[('a','Muy grave'),('b','Grave'),('c','Normal'),('d','Leve')])
     descripcionBaja = fields.Text(string='Descripcion de la baja:', required=True, help='Escribe una descripcion detallada')
     fechaBaja = fields.Date(string='Fecha de la baja', required=True, default=fields.Date.today())
 
