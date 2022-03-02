@@ -20,6 +20,17 @@ from odoo import models, fields, api, exceptions
 from datetime import date, datetime
 from dateutil.relativedelta import *
 
+class bajas(models.Model):
+    _name = 'horarios.bajas'
+    _description = 'Define los atributos de la baja'
+
+    motivoBaja = fields.Selection(string='Motivo de la baja:', Selection=[('a','Enfermedad'),('b','Maternidad'),('c','Paternidad'),('d','Accidente')])
+    gravedadBaja = fields.Selection(string='Gravedad de la baja:',Selection=[('a','Muy grave'),('b','Grave'),('c','Normal'),('d','Leve')])
+    descripcionBaja = fields.Text(string='Descripcion de la baja:', required=True, help='Escribe una descripcion detallada')
+    fechaBaja = fields.Date(string='Fecha de la baja', required=True, default=fields.Date.today())
+
+    empleado_id = fields.Many2one('proyectos.empleado','empleado.baja_id')
+
 class horarios(models.Model):
     _name = 'horarios.horario'
     _description = 'Define los atributos de un horario'

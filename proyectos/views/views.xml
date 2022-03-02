@@ -68,6 +68,7 @@
         <field name="fechaNacimiento"/>
         <field name="direccionEmpleado"/>
         <field name="telefonoEmpleado"/>
+        <field name="horario_id"/>
       </tree>
     </field>
   </record>

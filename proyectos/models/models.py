@@ -52,9 +52,8 @@ class empleado(models.Model):
 	#Relacion entre tablas
 	departamento_id = fields.Many2one('proyectos.departamento', string='Departamento')
 	proyecto_id = fields.Many2many('proyectos.proyecto', string='Proyectos')
-
-	#Relacion con tabla horario
 	horario_id = fields.Many2one('horarios.horario', string='Horarios')
+	baja_id = fields.Many2one('horarios.baja', string='Baja')
 
 	@api.depends('fechaNacimiento')
 	def _getEdad(self):

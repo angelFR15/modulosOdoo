@@ -74,9 +74,25 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+
+    <!--VISTA BAJAS-->
+    <record model="ir.ui.view" id="horarios.bajas_list_view">
+      <field name="name">horarios.bajas.view.tree</field>
+      <field name="model">horarios.bajas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="fechaBaja"/>
+          <field name="motivoBaja"/>
+          <field name="empleado_id"/>
+        </tree>
+      </field>
+    </record>
+
+
     <menuitem name="Horarios AFR" id="horarios.menu_root"/>
 
     <menuitem name="Horario" id="horarios.horario_menu" parent="horarios.menu_root" action="horarios.horario_action_window"/>
+    <menuitem name="Bajas" id="horarios.bajas_menu" parent="horarios.menu_root" action="horarios.bajas_action_window"/>
 
   </data>
 </odoo>
