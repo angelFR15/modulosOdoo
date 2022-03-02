@@ -37,24 +37,24 @@
                   <field name="empleado_id"/>
                 </group>
                 <group col="2">
-                  <field name="lunesEntrada"/>
-                  <field name="lunesSalida"/>
+                  <field name="lunesEntrada" style="width:10%%"/>
+                  <field name="lunesSalida" style="width:10%%"/>
                 </group>
                 <group col="2">
-                  <field name="martesEntrada"/>
-                  <field name="martesSalida"/>
+                  <field name="martesEntrada" style="width:10%%"/>
+                  <field name="martesSalida" style="width:10%%"/>
                 </group>
                 <group col="2">
-                  <field name="miercolesEntrada"/>
-                  <field name="miercolesSalida"/>
+                  <field name="miercolesEntrada" style="width:10%%"/>
+                  <field name="miercolesSalida" style="width:10%%"/>
                 </group>
                 <group col="2">
-                  <field name="juevesEntrada"/>
-                  <field name="juevesSalida"/>
+                  <field name="juevesEntrada" style="width:10%%"/>
+                  <field name="juevesSalida" style="width:10%%"/>
                 </group>
                 <group col="2">
-                  <field name="viernesEntrada"/>
-                  <field name="viernesSalida"/>
+                  <field name="viernesEntrada" style="width:10%%"/>
+                  <field name="viernesSalida" style="width:10%%"/>
                 </group>
               </page>
               <page string="Pagina 2">
