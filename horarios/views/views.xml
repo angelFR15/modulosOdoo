@@ -74,6 +74,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="horarios.bajas_action_window">
+      <field name="name">Bajas</field>
+      <field name="res_model">horarios.bajas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
 
     <!--VISTA BAJAS-->
     <record model="ir.ui.view" id="horarios.bajas_list_view">
