@@ -7,8 +7,7 @@
 
     'description': """
         Media Shop Spain es una tienda de tecnologia: Ordenadores, moviles, consolas.... Tenemos de todo!
-        Por lo que necesitamos tener nuestros modulos actualizados.
-    """,
+        Por lo que necesitamos tener nuestros modulos actualizados.""",
 
     'author': "Angel MMS",
     'website': "http://infsalinas.sytes.net:10070/",

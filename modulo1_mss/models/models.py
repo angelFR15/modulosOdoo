@@ -16,3 +16,39 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
+from odoo import models, fields, api, exceptions
+from datetime import date
+from dateutil.relativedelta import *
+
+class producto(models.Model):
+    _name = 'modulo1_mss.producto'
+    _description = 'Define los atributos del producto.'
+
+    refProducto = fields.Char(string='Referencia', required=True)
+    marca = fields.Char(string='Marca', required='True')
+    tipoProducto = fields.Selection(string='Tipo de producto', selection=[('a', 'Electrodomestico'),('b', 'Telefono'),('c', 'Ordenador portátil'),('d', 'Consola')], help='Tipo del producto.')
+
+
+    
+class proveedor(models.Model):
+    _name = 'modulo1_mss.proveedor'
+    _description = 'Define los atributos del proveedor.'
+
+    nifP = fields.Char(string='NIF', required=True)
+    nombreProveedor = fields.Char(string='Nombre', required=True)
+    paisProveedor = fields.Char(string='Pais', required=True)
+    direccionProveedor = fields.Char(string='Direccion', required=True)
+
+    def name_get(self):
+        listaProveedores = []
+        for proveedor in self:
+            listaProveedores.append((proveedor.id,proveedor.nombreProveedor))
+        return listaProveedores
+
+class almacen(models.Model):
+    _name = 'modulo1_mss.almacen'
+    _description = 'Define los atributos del proveedor.'
+
+    refAlmacen = fields.Char(string='Referencia', required=True)
+    categoria = fields.Selection(string='Categoria', selection=[('a', 'Electrodomestico'),('b', 'Telefono'),('c', 'Ordenador portátil'),('d', 'Consola')], help='Indica la categoria del almacen.')
+    pasillo = fields.Integer(string="Nº pasillo", required=True)
