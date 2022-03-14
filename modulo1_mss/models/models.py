@@ -26,7 +26,7 @@ class producto(models.Model):
 
     refProducto = fields.Char(string='Referencia', required=True)
     marca = fields.Char(string='Marca', required='True')
-    tipoProducto = fields.Selection(string='Tipo de producto', selection=[('a', 'Electrodomestico'),('b', 'Telefono'),('c', 'Ordenador portátil'),('d', 'Consola')], help='Tipo del producto.')
+    tipoProducto = fields.Selection(string='Tipo de producto', selection=[('Electrodomestico', 'Electrodomestico'),('Telefono', 'Telefono'),('Ordenador portátil', 'Ordenador portátil'),('Ordenador torre', 'Ordenador torre'),('Consola', 'Consola')], help='Tipo del producto.')
     precioCompra = fields.Float('Precio compra', (4,2), required=True)
     precioVenta = fields.Float('Precio compra', (4,2), required=True)
 
@@ -57,7 +57,7 @@ class almacen(models.Model):
     _description = 'Define los atributos del proveedor.'
 
     refAlmacen = fields.Char(string='Referencia', required=True)
-    categoria = fields.Selection(string='Categoria', selection=[('a', 'Electrodomesticos'),('b', 'Telefonos'),('c', 'Ordenadores'),('d', 'Consolas')], help='Indica la categoria del almacen.')
+    categoria = fields.Selection(string='Categoria', selection=[('Electrodomesticos', 'Electrodomesticos'),('Telefonos', 'Telefonos'),('Ordenadores', 'Ordenadores'),('Consolas', 'Consolas')], help='Indica la categoria del almacen.')
     pasillo = fields.Integer(string="Nº pasillo", required=True)
 
     producto_id = fields.One2many('modulo1_mss.producto','almacen_id', string='Producto')
