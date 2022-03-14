@@ -38,7 +38,11 @@ class producto(models.Model):
         for producto in self:
             producto.precioVenta = producto.precioCompra + (producto.precioCompra * 0.21)
 
-
+    @api.constrains('precioCompra')
+    def _checkPrecioC(self):
+        for producto in self:
+            if (producto.precioCompra <= 0.0):
+                raise exceptions.ValidationError("El precio no puede ser 0.")
     
 class proveedor(models.Model):
     _name = 'modulo1_mss.proveedor'
