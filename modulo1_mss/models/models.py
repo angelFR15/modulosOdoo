@@ -46,7 +46,6 @@ class proveedor(models.Model):
 
     producto_id = fields.One2many('modulo1_mss.producto','proveedor_id', string='Proveedor')
 
-
     def name_get(self):
         listaProveedores = []
         for proveedor in self:

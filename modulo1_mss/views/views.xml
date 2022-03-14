@@ -27,7 +27,6 @@
         <field name="nombreProveedor"/>
         <field name="paisProveedor"/>
         <field name="direccionProveedor"/>
-        <field name="precioVenta"/>
         <field name="producto_id"/>
       </tree>
     </field>
