@@ -44,6 +44,9 @@ class proveedor(models.Model):
     paisProveedor = fields.Char(string='Pais', required=True)
     direccionProveedor = fields.Char(string='Direccion', required=True)
 
+    producto_id = fields.One2many('modulo1_mss.producto','proveedor_id', string='Proveedor')
+
+
     def name_get(self):
         listaProveedores = []
         for proveedor in self:
@@ -57,3 +60,5 @@ class almacen(models.Model):
     refAlmacen = fields.Char(string='Referencia', required=True)
     categoria = fields.Selection(string='Categoria', selection=[('a', 'Electrodomestico'),('b', 'Telefono'),('c', 'Ordenador portátil'),('d', 'Consola')], help='Indica la categoria del almacen.')
     pasillo = fields.Integer(string="Nº pasillo", required=True)
+
+    producto_id = fields.One2many('modulo1_mss.producto','almacen_id', string='Almacen')

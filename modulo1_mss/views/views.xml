@@ -17,16 +17,59 @@
     </field>
   </record>
 
+  <!-- vista proveedor -->
+  <record model="ir.ui.view" id="modulo1_mss.proveedor_list_view">
+    <field name="name">modulo1_mss.proveedor.view.tree</field>
+    <field name="model">modulo1_mss.proveedor</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="nifP"/>
+        <field name="nombreProveedor"/>
+        <field name="paisProveedor"/>
+        <field name="direccionProveedor"/>
+        <field name="precioVenta"/>
+        <field name="producto_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- vista almacen -->
+  <record model="ir.ui.view" id="modulo1_mss.almacen_list_view">
+    <field name="name">modulo1_mss.almacen.view.tree</field>
+    <field name="model">modulo1_mss.almacen</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="refAlmacen"/>
+        <field name="categoria"/>
+        <field name="pasillo"/>
+        <field name="producto_id"/>
+      </tree>
+    </field>
+  </record>
+
+
 <!-- DEFINICION DE MUNUS -->
   <record model="ir.actions.act_window" id="modulo1_mss.producto_action_window">
       <field name="name">Productos</field>
       <field name="res_model">modulo1_mss.producto</field>
       <field name="view_mode">tree,form</field>
   </record>
+  <record model="ir.actions.act_window" id="modulo1_mss.proveedor_action_window">
+      <field name="name">Proveedor</field>
+      <field name="res_model">modulo1_mss.proveedor</field>
+      <field name="view_mode">tree,form</field>
+  </record>
+  <record model="ir.actions.act_window" id="modulo1_mss.almacen_action_window">
+      <field name="name">Almacen</field>
+      <field name="res_model">modulo1_mss.almacen</field>
+      <field name="view_mode">tree,form</field>
+  </record>
 
   <menuitem name="Registro de Productos" id="modulo1_mss.menu_root"/>  <!--web_icon="modulo1_mss,static/description/icon.png"-->
 
   <menuitem name="Productos" id="modulo1_mss.producto_menu" parent="modulo1_mss.menu_root" action="modulo1_mss.producto_action_window"/>
+  <menuitem name="Proveedor" id="modulo1_mss.proveedor_menu" parent="modulo1_mss.menu_root" action="modulo1_mss.proveedor_action_window"/>
+  <menuitem name="Almacen" id="modulo1_mss.almacen_menu" parent="modulo1_mss.menu_root" action="modulo1_mss.almacen_action_window"/>
 
 
   </data>
