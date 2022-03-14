@@ -26,7 +26,7 @@ class producto(models.Model):
 
     refProducto = fields.Char(string='Referencia', required=True)
     marca = fields.Char(string='Marca', required='True')
-    tipoProducto = fields.Selection(string='Tipo de producto', selection=[('Electrodomestico', 'Electrodomestico'),('Telefono', 'Telefono'),('Ordenador portátil', 'Ordenador portátil'),('Ordenador torre', 'Ordenador torre'),('Consola', 'Consola')], help='Tipo del producto.')
+    tipoProducto = fields.Selection(string='Tipo de producto', required=True, selection=[('Electrodomestico', 'Electrodomestico'),('Telefono', 'Telefono'),('Ordenador portátil', 'Ordenador portátil'),('Ordenador torre', 'Ordenador torre'),('Consola', 'Consola')], help='Tipo del producto.')
     precioCompra = fields.Float('Precio compra', (4,2), required=True)
     precioVenta = fields.Float('Precio venta', (4,2), compute='_getPrecioV')
 
@@ -76,3 +76,8 @@ class almacen(models.Model):
         for almacen in self:
             listaAlmacenes.append((almacen.id, almacen.refAlmacen + ", " + almacen.categoria))
         return listaAlmacenes
+    @api.constrains('pasillo')
+    def _checkPasillo(self):
+        for almacen in self:
+            if (almacen.pasillo > 5 or almacen.pasillo < 1):
+                raise exceptions.ValidationError("Le recordamos que cada almacén tiene únicamente 5 pasillos (enumerados del 1 al 5).")
