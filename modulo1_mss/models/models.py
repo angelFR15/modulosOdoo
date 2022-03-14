@@ -65,5 +65,5 @@ class almacen(models.Model):
     def name_get(self):
         listaAlmacenes = []
         for almacen in self:
-            listaAlmacenes.append((almacen.id, almacen.refAlmacen + " " + almacen.categoria))
+            listaAlmacenes.append((almacen.id, almacen.refAlmacen + ", " + almacen.categoria))
         return listaAlmacenes
