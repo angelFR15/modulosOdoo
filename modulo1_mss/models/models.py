@@ -27,6 +27,11 @@ class producto(models.Model):
     refProducto = fields.Char(string='Referencia', required=True)
     marca = fields.Char(string='Marca', required='True')
     tipoProducto = fields.Selection(string='Tipo de producto', selection=[('a', 'Electrodomestico'),('b', 'Telefono'),('c', 'Ordenador portátil'),('d', 'Consola')], help='Tipo del producto.')
+    precioCompra = fields.Double(string='Precio compra', required=True)
+    precioVenta = fields.Double(string='Precio venta', required=True)
+
+    proveedor_id = fields.Many2one('modulo1_mss.proveedor', string='Proveedor')
+    almacen_id = fields.Many2one('modulo1_mss.almacen', string='Almacen')
 
 
     

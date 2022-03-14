@@ -1,60 +1,30 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="modulo1_mss.list">
-      <field name="name">Modulo1MSS list</field>
-      <field name="model">modulo1_mss.modulo1_mss</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
--->
+  <!-- vista producto -->
+  <record model="ir.ui.view" id="modulo1_mss.producto_list_view">
+    <field name="name">modulo1_mss.producto.view.tree</field>
+    <field name="model">modulo1_mss.producto</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="refProducto"/>
+        <field name="marca"/>
+        <field name="tipoProducto"/>
+        <field name="precioCompra"/>
+        <field name="precioVenta"/>
+        <field name="proveedor_id"/>
+        <field name="almacen_id"/>
+      </tree>
+    </field>
+  </record>
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="modulo1_mss.action_window">
-      <field name="name">Modulo1MSS window</field>
-      <field name="res_model">modulo1_mss.modulo1_mss</field>
+<!-- DEFINICION DE MUNUS -->
+  <record model="ir.actions.act_window" id="modulo1_mss.producto_action_window">
+      <field name="name">Productos</field>
+      <field name="res_model">modulo1_mss.producto</field>
       <field name="view_mode">tree,form</field>
-    </record>
--->
+  </record>
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="modulo1_mss.action_server">
-      <field name="name">Modulo1MSS server</field>
-      <field name="model_id" ref="model_modulo1_mss_modulo1_mss"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
+  <menuitem name="Registro de Productos" id="modulo1_mss.menu_root"/>  <!--web_icon="modulo1_mss,static/description/icon.png"-->
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="Modulo1MSS" id="modulo1_mss.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="modulo1_mss.menu_1" parent="modulo1_mss.menu_root"/>
-    <menuitem name="Menu 2" id="modulo1_mss.menu_2" parent="modulo1_mss.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="modulo1_mss.menu_1_list" parent="modulo1_mss.menu_1"
-              action="modulo1_mss.action_window"/>
-    <menuitem name="Server to list" id="modulo1_mss" parent="modulo1_mss.menu_2"
-              action="modulo1_mss.action_server"/>
--->
   </data>
 </odoo>
