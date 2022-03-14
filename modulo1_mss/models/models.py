@@ -57,7 +57,7 @@ class almacen(models.Model):
     _description = 'Define los atributos del proveedor.'
 
     refAlmacen = fields.Char(string='Referencia', required=True)
-    categoria = fields.Selection(string='Categoria', selection=[('a', 'Electrodomestico'),('b', 'Telefono'),('c', 'Ordenador portátil'),('d', 'Consola')], help='Indica la categoria del almacen.')
+    categoria = fields.Selection(string='Categoria', selection=[('a', 'Electrodomesticos'),('b', 'Telefonos'),('c', 'Ordenadores'),('d', 'Consolas')], help='Indica la categoria del almacen.')
     pasillo = fields.Integer(string="Nº pasillo", required=True)
 
     producto_id = fields.One2many('modulo1_mss.producto','almacen_id', string='Almacen')
