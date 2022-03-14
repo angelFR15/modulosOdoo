@@ -26,5 +26,8 @@
 
   <menuitem name="Registro de Productos" id="modulo1_mss.menu_root"/>  <!--web_icon="modulo1_mss,static/description/icon.png"-->
 
+  <menuitem name="Productos" id="modulo1_mss.producto_menu" parent="modulo1_mss.menu_root" action="modulo1_mss.producto_action_window"/>
+
+
   </data>
 </odoo>
