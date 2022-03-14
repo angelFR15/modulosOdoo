@@ -60,6 +60,11 @@ class proveedor(models.Model):
         for proveedor in self:
             listaProveedores.append((proveedor.id,proveedor.nombreProveedor))
         return listaProveedores
+    @api.constrains('nifP')
+    def _checkNIF(self):
+        for proveedor in self:
+            if (len(proveedor.nifP) > 5 or len(proveedor.nifP) < 5):
+                raise exceptions.ValidationError("El NIF se compone de 5 digitos")
 
 class almacen(models.Model):
     _name = 'modulo1_mss.almacen'
@@ -76,6 +81,7 @@ class almacen(models.Model):
         for almacen in self:
             listaAlmacenes.append((almacen.id, almacen.refAlmacen + ", " + almacen.categoria))
         return listaAlmacenes
+
     @api.constrains('pasillo')
     def _checkPasillo(self):
         for almacen in self:
