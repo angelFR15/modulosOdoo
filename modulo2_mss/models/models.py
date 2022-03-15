@@ -29,6 +29,9 @@ class entrega(models.Model):
     unidades = fields.Integer(string="Unidades", required=True)
     entregaRealizada = fields.Boolean(string='Realizada', default=False)
 
+    producto_id = fields.Many2many('modulo1_mss.producto',string='Producto')
+    companiaReparto_id = fields.Many2one('modulo2_mss.companiaReparto', string='Compañia de reparto')
+
 class companiaReparto(models.Model):
     _name = 'modulo1_mss.companiaReparto'
     _description = 'Define los atributos de la compañia de reparto.'
@@ -36,3 +39,5 @@ class companiaReparto(models.Model):
     nifCR = fields.Char(string='NIF', required=True)
     nombreCR = fields.Char(string='Nombre', required=True)
     paisCR = fields.Char(string='Pais', required=True)
+
+    entrega_id = fields.One2many('modulo2_mss.entrega','entrega_id', string='Entrega')

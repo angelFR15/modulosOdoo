@@ -1,26 +1,26 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Modulo2MSS",
+    'name': "Entregas y Reparto",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Aplicacion para y de la empresa Media Shop Spain.
+        """,
 
     'description': """
-        Long description of module's purpose
+        Este módulo se basa en las entregas que recibimos de los productos y de las empresas de reparto asociadas.
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Media Shop Spain, Angel Fernandez",
+    'website': "http://infsalinas.sytes.net:10070",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Tecnologia',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','modulo1_mss'],
 
     # always loaded
     'data': [
