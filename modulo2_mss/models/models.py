@@ -36,7 +36,7 @@ class entrega(models.Model):
     def _getEntregaR(self):
         for entrega in self:
             hoy = date.today()
-            if entrega.fechaEntrega >= hoy:
+            if entrega.fechaEntrega <= hoy:
                 entrega.entregaRealizada = True
             else:
                 entrega.entregaRealizada = False
