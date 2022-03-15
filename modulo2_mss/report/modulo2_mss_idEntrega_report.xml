@@ -1,0 +1,54 @@
+<odoo>
+    <record id="modulo1_mss.proveedores_report" model="ir.actions.report">
+        <field name="name">Informe Entrega</field>
+        <field name="model">modulo2_mss.entrega</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">modulo2_mss.entrega_report_view</field>
+        <field name="report_file">modulo2_mss.entrega_report</field>
+        <field name="binding_model_id" ref="model_modulo2_mss_entrega"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="entrega_report_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="entrega">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>INFORME ENTREGA</h2>
+                        <h3 t-field="entrega.refEntrega"/>
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <th>REF. del PRODUCTO</th>
+                                <th>MARCA</th>
+                                <th>TIPO PRODUCTO</th>
+                                <th>PRECIO de COMPRA</th>
+                                <th>PRECIO de VENTA</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="entrega.producto_id" t-as="entrega">
+                                    <tr>
+                                        <td>
+                                            <span t-field="producto.refProducto"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="producto.marca"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="producto.tipoProducto"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="producto.precioCompra"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="producto.precioVenta"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
