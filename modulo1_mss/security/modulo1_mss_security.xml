@@ -16,7 +16,7 @@
             <field name="name">role1</field>
             <field name="category_id" ref="modulo1_mss.module_category_modulo1_mss"/>
             <field name="comment">role1</field>
-            <field name="implied_ids" eval="[(4, ref('group_modulo1_mss_role2'))]"/>
+            <field name="implied_ids" eval="[(4, ref('group_modulo1_role2'))]"/>
             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
     </data>
