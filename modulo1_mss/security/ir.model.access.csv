@@ -2,4 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_modulo1_mss_producto_role1,modulo1_mss.producto.role1,model_modulo1_mss_producto,modulo1_mss.group_modulo1_mss_role1,1,1,1,1
 access_modulo1_mss_proveedor_role1,modulo1_mss.proveedor.role1,model_modulo1_mss_proveedor,modulo1_mss.group_modulo1_mss_role1,1,0,0,0
 access_modulo1_mss_proveedor_role2,modulo1_mss.proveedor.role2,model_modulo1_mss_proveedor,modulo1_mss.group_modulo1_mss_role2,1,0,0,0
-access_modulo1_mss_almacen_role1,modulo1_mss.almacen.role1,model_modulo1_mss_almacen,modulo1_mss.group_modulo1_mss_role1,1,1,1,1
+access_modulo1_mss_almacen_role1,modulo1_mss.almacen.role1,model_modulo1_mss_almacen,modulo1_mss.group_modulo1_mss_role1_role1,1,1,1,1
