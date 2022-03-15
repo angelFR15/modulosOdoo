@@ -21,7 +21,7 @@ from datetime import date
 from dateutil.relativedelta import *
 
 class entrega(models.Model):
-    _name = 'modulo1_mss.entrega'
+    _name = 'modulo2_mss.entrega'
     _description = 'Define los atributos de la entrega.'
 
     refEntrega = fields.Char(string='Referencia', required=True)
@@ -33,7 +33,7 @@ class entrega(models.Model):
     #reparto_id = fields.Many2one('modulo2_mss.reparto', string='Compania de reparto')
 
 class reparto(models.Model):
-    _name = 'modulo1_mss.reparto'
+    _name = 'modulo2_mss.reparto'
     _description = 'Define los atributos de la compañia de reparto.'
 
     nifR = fields.Char(string='NIF', required=True)
