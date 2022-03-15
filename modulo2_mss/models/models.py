@@ -29,7 +29,7 @@ class entrega(models.Model):
     unidades = fields.Integer(string="Unidades", required=True)
     entregaRealizada = fields.Boolean(string='Realizada', default=False)
 
-    producto_id = fields.Many2many('modulo1_mss.producto',string='Producto')
+    #producto_id = fields.Many2many('modulo1_mss.producto',string='Producto')
     #reparto_id = fields.Many2one('modulo2_mss.reparto', string='Compania de reparto')
 
 class reparto(models.Model):

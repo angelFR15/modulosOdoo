@@ -10,7 +10,6 @@
           <field name="fechaEstimada"/>
           <field name="unidades"/>
           <field name="entregaRealizada"/>
-          <field name="producto_id"/>
         </tree>
      </field>
     </record>
