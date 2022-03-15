@@ -38,6 +38,8 @@ class entrega(models.Model):
             hoy = date.today()
             if entrega.fechaEntrega >= hoy:
                 entrega.entregaRealizada = True
+            else:
+                entrega.entregaRealizada = False
 
 
 class reparto(models.Model):
