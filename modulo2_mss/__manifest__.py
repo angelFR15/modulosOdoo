@@ -24,10 +24,10 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
+        'security/modulo2_mss_security.xml',
         'views/views.xml',
         'views/templates.xml',
-        'report/modulo2_mss_idEntrega_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

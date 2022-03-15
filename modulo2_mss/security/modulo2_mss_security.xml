@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="modulo2_mss.module_category_modulo2_mss">
+            <field name="name">Entregas y Reparto</field>
+            <field name="description">Gestion y asignacion entregas.</field>
+        </record>
+
+        <record model="res.groups" id="group_modulo2_mss_role2">
+            <field name="name">role2</field>
+            <field name="category_id" ref="modulo2_mss.module_category_modulo2_mss"/>
+            <field name="comment">role2</field>
+        </record>
+
+        <record model="res.groups" id="group_modulo2_mss_role1">
+            <field name="name">role1</field>
+            <field name="category_id" ref="modulo2_mss.module_category_modulo2_mss"/>
+            <field name="comment">role1</field>
+            <field name="implied_ids" eval="[(4, ref('group_modulo2_mss_role2'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+    </data>
+</odoo>

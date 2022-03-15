@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_modulo2_mss_modulo2_mss,modulo2_mss.modulo2_mss,model_modulo2_mss_modulo2_mss,base.group_user,1,1,1,1
+access_modulo2_mss_entrega_role1,modulo2_mss.entrega.role1,model_modulo2_mss_entrega,modulo2_mss.group_modulo2_mss_role1,1,1,1,1
+access_modulo2_mss_reparto_role1,modulo2_mss.reparto.role1,model_modulo2_mss_reparto,modulo2_mss.group_modulo2_mss_role1,1,1,1,1
+access_modulo2_mss_reparto_role2,modulo2_mss.reparto.role2,model_modulo2_mss_reparto,modulo2_mss.group_modulo2_mss_role2,1,0,0,0
