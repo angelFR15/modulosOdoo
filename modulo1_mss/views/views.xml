@@ -13,6 +13,7 @@
         <field name="precioVenta"/>
         <field name="proveedor_id"/>
         <field name="almacen_id"/>
+        <field name="entrega_id"/>
       </tree>
     </field>
   </record>
