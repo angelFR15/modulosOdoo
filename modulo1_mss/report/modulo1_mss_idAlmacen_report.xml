@@ -15,7 +15,7 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <h2>INFORME PROVEEDOR</h2>
-                        <h3 t-field="proveedor.nombreProveedor"/><h3 t-field="proveedor.nifP"/> 
+                        <h3 t-field="proveedor.nombreProveedor"/>
                         <table class="table table-sm o_main_table">
                             <thead>
                                 <th>REF. del PRODUCTO</th>
