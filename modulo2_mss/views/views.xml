@@ -42,7 +42,7 @@
       <field name="view_mode">tree,form</field>
   </record>
 
-  <menuitem name="Entregas y Repartos" id="modulo2_mss.menu_root"/>  <!--web_icon="modulo1_mss,static/description/icon.png"-->
+  <menuitem name="Entregas y Repartos" id="modulo2_mss.menu_root" web_icon="modulo2_mss,static/description/icon.png"/> 
 
   <menuitem name="Entregas" id="modulo2_mss.entrega_menu" parent="modulo2_mss.menu_root" action="modulo2_mss.entrega_action_window"/>
   <menuitem name="Companias de Reparto" id="modulo2_mss.reparto_menu" parent="modulo2_mss.menu_root" action="modulo2_mss.reparto_action_window"/>

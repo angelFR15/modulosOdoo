@@ -32,15 +32,21 @@ class entrega(models.Model):
     producto_id = fields.Many2many('modulo1_mss.producto',string='Producto')
     reparto_id = fields.Many2one('modulo2_mss.reparto', string='Compania de reparto')
 
+    @api.constrains('fechaEntrega')
+    def _checkFechaEntrega(self):
+        hoy = date.today()
+        for entrega in self:
+            if entrega.fechaEntrega < hoy:
+                raise exceptions.ValidationError("La fecha de entrega no puede ser anterior a hoy.")
+
     @api.depends('fechaEntrega')
     def _getEntregaR(self):
         for entrega in self:
             hoy = date.today()
-            if entrega.fechaEntrega <= hoy:
+            if entrega.fechaEntrega < hoy:
                 entrega.entregaRealizada = True
             else:
                 entrega.entregaRealizada = False
-
 
 class reparto(models.Model):
     _name = 'modulo2_mss.reparto'
