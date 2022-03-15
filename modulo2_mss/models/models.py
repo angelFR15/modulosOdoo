@@ -27,7 +27,7 @@ class entrega(models.Model):
     refEntrega = fields.Char(string='Referencia', required=True)
     fechaEstimada = fields.Date(string="Fecha Estimada", required=True)
     unidades = fields.Integer(string="Unidades", required=True)
-    entregaRealizada = fields.Check(string='Realizada', bool=False)
+    entregaRealizada = fields.Boolean(string='Realizada', default=False)
 
 class companiaReparto(models.Model):
     _name = 'modulo1_mss.companiaReparto'
