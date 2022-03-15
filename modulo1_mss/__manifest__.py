@@ -22,7 +22,8 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
+        'security/modulo1_mss_security.xml',
         'views/views.xml',
         'views/templates.xml',
     ],

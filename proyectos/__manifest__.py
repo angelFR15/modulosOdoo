@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Modulos Odoo AFR",
+    'name': "Modulos Odoo",
 
     'summary': """
         Esta aplicacion es una prueba de funcionamiento.""",
