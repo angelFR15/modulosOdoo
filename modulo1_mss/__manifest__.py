@@ -27,7 +27,7 @@
         'views/views.xml',
         'views/templates.xml',
         'report/modulo1_mss_idProveedor_report.xml',
-        #'report/proyecto_idProyecto_report.xml',
+        'report/modulo1_mss_idAlmacen_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
