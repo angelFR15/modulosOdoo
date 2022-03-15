@@ -30,7 +30,7 @@ class entrega(models.Model):
     entregaRealizada = fields.Boolean(string='Realizada', default=False)
 
     producto_id = fields.Many2many('modulo1_mss.producto',string='Producto')
-    reparto_id = fields.Many2one('modulo2_mss.reparto', string='Compania de reparto')
+    #reparto_id = fields.Many2one('modulo2_mss.reparto', string='Compania de reparto')
 
 class reparto(models.Model):
     _name = 'modulo1_mss.reparto'
@@ -40,4 +40,4 @@ class reparto(models.Model):
     nombreR = fields.Char(string='Nombre', required=True)
     paisR = fields.Char(string='Pais', required=True)
 
-    entrega_id = fields.One2many('modulo2_mss.entrega','reparto_id', string='Entrega')
+    #entrega_id = fields.One2many('modulo2_mss.entrega','reparto_id', string='Entrega')
