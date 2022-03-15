@@ -15,10 +15,9 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <h2>INFORME PROVEEDOR</h2>
-                        <h3 t-field="proveedor.nombreProveedor"/>
+                        <h3 t-field="proveedor.nombreProveedor"/><h3 t-field="proveedor.nifP"/> 
                         <table class="table table-sm o_main_table">
                             <thead>
-                                <th>NIF Prov.</th>
                                 <th>REF. del PRODUCTO</th>
                                 <th>MARCA</th>
                                 <th>TIPO PRODUCTO</th>
@@ -28,9 +27,6 @@
                             <tbody>
                                 <t t-foreach="proveedor.producto_id" t-as="producto">
                                     <tr>
-                                        <td>
-                                            <span t-field="proveedor.nifP"/>
-                                        </td>
                                         <td>
                                             <span t-field="producto.refProducto"/>
                                         </td>
