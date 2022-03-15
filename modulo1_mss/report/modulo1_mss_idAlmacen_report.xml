@@ -1,21 +1,21 @@
 <odoo>
     <record id="modulo1_mss.proveedores_report" model="ir.actions.report">
-        <field name="name">Informe Proveedor</field>
-        <field name="model">modulo1_mss.proveedor</field>
+        <field name="name">Informe Almacen</field>
+        <field name="model">modulo1_mss.almacen</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">modulo1_mss.proveedor_report_view</field>
-        <field name="report_file">modulo1_mss.proveedor_report</field>
-        <field name="binding_model_id" ref="model_modulo1_mss_proveedor"/>
+        <field name="report_name">modulo1_mss.almacen_report_view</field>
+        <field name="report_file">modulo1_mss.almacen_report</field>
+        <field name="binding_model_id" ref="model_modulo1_mss_almacen"/>
         <field name="binding_type">report</field>
     </record>
 
-    <template id="proveedor_report_view">
+    <template id="almacen_report_view">
         <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="proveedor">
+            <t t-foreach="docs" t-as="almacen">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h2>INFORME PROVEEDOR</h2>
-                        <h3 t-field="proveedor.nombreProveedor"/>
+                        <h2>INFORME Almacen</h2>
+                        <h3 t-field="almacen.refAlmacen"/>
                         <table class="table table-sm o_main_table">
                             <thead>
                                 <th>REF. del PRODUCTO</th>
@@ -25,7 +25,7 @@
                                 <th>PRECIO de VENTA</th>
                             </thead>
                             <tbody>
-                                <t t-foreach="proveedor.producto_id" t-as="producto">
+                                <t t-foreach="almacen.producto_id" t-as="producto">
                                     <tr>
                                         <td>
                                             <span t-field="producto.refProducto"/>
