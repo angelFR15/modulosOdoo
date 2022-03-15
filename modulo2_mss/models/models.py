@@ -27,10 +27,18 @@ class entrega(models.Model):
     refEntrega = fields.Char(string='Referencia', required=True)
     fechaEntrega = fields.Date(string="Fecha Entrega", required=True)
     unidades = fields.Integer(string="Unidades", required=True)
-    entregaRealizada = fields.Boolean(string='Realizada', default=False)
+    entregaRealizada = fields.Boolean(string='Realizada', default=False, compute='_getEntregaR')
 
     producto_id = fields.Many2many('modulo1_mss.producto',string='Producto')
     reparto_id = fields.Many2one('modulo2_mss.reparto', string='Compania de reparto')
+
+    @api.depends('fechaEntrega')
+    def _getEntregaR(self):
+        for entrega in self:
+            hoy = date.today()
+            if entrega.fechaEntrega >= hoy:
+                entrega.entregaRealizada = True
+
 
 class reparto(models.Model):
     _name = 'modulo2_mss.reparto'
