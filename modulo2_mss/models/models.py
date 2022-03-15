@@ -40,4 +40,4 @@ class companiaReparto(models.Model):
     nombreCR = fields.Char(string='Nombre', required=True)
     paisCR = fields.Char(string='Pais', required=True)
 
-    entrega_id = fields.One2many('modulo2_mss.entrega','entrega_id', string='Entrega')
+    entrega_id = fields.One2many('modulo2_mss.entrega','companiaReparto_id', string='Entrega')
