@@ -25,12 +25,12 @@ class entrega(models.Model):
     _description = 'Define los atributos de la entrega.'
 
     refEntrega = fields.Char(string='Referencia', required=True)
-    fechaEstimada = fields.Date(string="Fecha Estimada", required=True)
+    fechaEntrega = fields.Date(string="Fecha Entrega", required=True)
     unidades = fields.Integer(string="Unidades", required=True)
     entregaRealizada = fields.Boolean(string='Realizada', default=False)
 
-    #producto_id = fields.Many2many('modulo1_mss.producto',string='Producto')
-    #reparto_id = fields.Many2one('modulo2_mss.reparto', string='Compania de reparto')
+    producto_id = fields.Many2many('modulo1_mss.producto',string='Producto')
+    reparto_id = fields.Many2one('modulo2_mss.reparto', string='Compania de reparto')
 
 class reparto(models.Model):
     _name = 'modulo2_mss.reparto'
@@ -40,4 +40,4 @@ class reparto(models.Model):
     nombreR = fields.Char(string='Nombre', required=True)
     paisR = fields.Char(string='Pais', required=True)
 
-    #entrega_id = fields.One2many('modulo2_mss.entrega','reparto_id', string='Entrega')
+    entrega_id = fields.One2many('modulo2_mss.entrega','reparto_id', string='Entrega')

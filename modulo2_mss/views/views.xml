@@ -7,9 +7,11 @@
       <field name="arch" type="xml">
         <tree>
           <field name="refEntrega"/>
-          <field name="fechaEstimada"/>
+          <field name="fechaEntrega"/>
           <field name="unidades"/>
           <field name="entregaRealizada"/>
+          <field name="producto_id"/>
+          <field name="reparto_id"/>
         </tree>
      </field>
     </record>
@@ -23,6 +25,7 @@
           <field name="nifR"/>
           <field name="nombreR"/>
           <field name="paisR"/>
+          <field name="entrega_id"/>
         </tree>
      </field>
     </record>
