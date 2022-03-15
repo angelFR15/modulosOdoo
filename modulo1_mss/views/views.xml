@@ -64,7 +64,7 @@
       <field name="view_mode">tree,form</field>
   </record>
 
-  <menuitem name="Registro de Productos" id="modulo1_mss.menu_root" web_icon="modulo1_mss,static/description/appIcon.png"/>
+  <menuitem name="Registro de Productos" id="modulo1_mss.menu_root" web_icon="modulo1_mss,static/description/appIcon.ico"/>
 
   <menuitem name="Productos" id="modulo1_mss.producto_menu" parent="modulo1_mss.menu_root" action="modulo1_mss.producto_action_window"/>
   <menuitem name="Proveedor" id="modulo1_mss.proveedor_menu" parent="modulo1_mss.menu_root" action="modulo1_mss.proveedor_action_window"/>
