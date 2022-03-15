@@ -1,60 +1,51 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="modulo2_mss.list">
-      <field name="name">Modulo2MSS list</field>
-      <field name="model">modulo2_mss.modulo2_mss</field>
+    <!--vista entrega-->
+    <record model="ir.ui.view" id="modulo2_mss.entrega_list_view">
+      <field name="name">modulo2_mss.entrega.view.tree</field>
+      <field name="model">modulo2_mss.entrega</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="refEntrega"/>
+          <field name="fechaEstimada"/>
+          <field name="unidades"/>
+          <field name="entregaRealizada"/>
+          <field name="producto_id"/>
+          <field name="reparto_id"/>
         </tree>
-      </field>
+     </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="modulo2_mss.action_window">
-      <field name="name">Modulo2MSS window</field>
-      <field name="res_model">modulo2_mss.modulo2_mss</field>
+    <!--vista reparto-->
+    <record model="ir.ui.view" id="modulo2_mss.reparto_list_view">
+      <field name="name">modulo2_mss.reparto.view.tree</field>
+      <field name="model">modulo2_mss.reparto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nifR"/>
+          <field name="nombreR"/>
+          <field name="paisR"/>
+          <field name="entrega_id"/>
+        </tree>
+     </field>
+    </record>
+
+    <!-- DEFINICION DE MUNUS -->
+  <record model="ir.actions.act_window" id="modulo2_mss.entrega_action_window">
+      <field name="name">Entregas</field>
+      <field name="res_model">modulo2_mss.entrega</field>
       <field name="view_mode">tree,form</field>
-    </record>
--->
+  </record>
+  <record model="ir.actions.act_window" id="modulo2_mss.reparto_action_window">
+      <field name="name">Companias de reparto</field>
+      <field name="res_model">modulo2_mss.reparto</field>
+      <field name="view_mode">tree,form</field>
+  </record>
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="modulo2_mss.action_server">
-      <field name="name">Modulo2MSS server</field>
-      <field name="model_id" ref="model_modulo2_mss_modulo2_mss"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
+  <menuitem name="Entregas y Repartos" id="modulo2_mss.menu_root"/>  <!--web_icon="modulo1_mss,static/description/icon.png"-->
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="Modulo2MSS" id="modulo2_mss.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="modulo2_mss.menu_1" parent="modulo2_mss.menu_root"/>
-    <menuitem name="Menu 2" id="modulo2_mss.menu_2" parent="modulo2_mss.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="modulo2_mss.menu_1_list" parent="modulo2_mss.menu_1"
-              action="modulo2_mss.action_window"/>
-    <menuitem name="Server to list" id="modulo2_mss" parent="modulo2_mss.menu_2"
-              action="modulo2_mss.action_server"/>
--->
+  <menuitem name="Entregas" id="modulo2_mss.entrega_menu" parent="modulo2_mss.menu_root" action="modulo2_mss.entrega_action_window"/>
+  <menuitem name="Companias de Reparto" id="modulo2_mss.reparto_menu" parent="modulo2_mss.menu_root" action="modulo2_mss.reparto_action_window"/>
+
   </data>
 </odoo>
