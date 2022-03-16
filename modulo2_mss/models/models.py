@@ -68,7 +68,7 @@ class reparto(models.Model):
     nombreR = fields.Char(string='Nombre', required=True)
     paisR = fields.Char(string='Pais', required=True)
 
-    entrega_id = fields.One2many('modulo2_mss.entrega','reparto_id', string='Entrega')
+    entrega_id = fields.One2many('modulo2_mss.entrega','reparto_id', string='Entregas')
 
     def name_get(self):
         listaRepartos = []
