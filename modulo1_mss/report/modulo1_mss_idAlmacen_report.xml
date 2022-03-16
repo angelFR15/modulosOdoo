@@ -1,5 +1,5 @@
 <odoo>
-    <record id="modulo1_mss.proveedores_report" model="ir.actions.report">
+    <record id="modulo1_mss.almacen_report" model="ir.actions.report">
         <field name="name">Informe Almacen</field>
         <field name="model">modulo1_mss.almacen</field>
         <field name="report_type">qweb-pdf</field>
