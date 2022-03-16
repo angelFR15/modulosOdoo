@@ -54,7 +54,12 @@ class entrega(models.Model):
             else:
                 entrega.entregaRealizada = False
 
-    @api.
+    @api.constrains('cantidad')
+    def _checkCantidadFecha(self):
+        for entrega in self:
+            hoy = date.today()
+            if entrega.cantidad > 49 and fechaEntrega == hoy:
+                raise exceptions.ValidationError("Las entregas de más de 50 unidades tardan por lo menos 24 horas.")
 
 class reparto(models.Model):
     _name = 'modulo2_mss.reparto'
