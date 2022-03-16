@@ -30,7 +30,7 @@ class producto(models.Model):
 
     proveedor_id = fields.Many2one('modulo1_mss.proveedor', string='Proveedor')
     almacen_id = fields.Many2one('modulo1_mss.almacen', string='Almacen')
-    entrega_id = fields.Many2one('modulo2_mss.entrega', string='Entrega')
+    entrega_id = fields.Many2many('modulo2_mss.entrega', string='Entrega')
 
     @api.depends('precioCompra')
     def _getPrecioV(self):
