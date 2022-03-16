@@ -29,7 +29,7 @@ class entrega(models.Model):
     unidades = fields.Integer(string="Unidades", required=True)
     entregaRealizada = fields.Boolean(string='Realizada', default=False, compute='_getEntregaR')
 
-    producto_id = fields.Many2many('modulo1_mss.producto',string='Producto')
+    producto_id = fields.Many2many('modulo1_mss.producto',string='Productos')
     reparto_id = fields.Many2one('modulo2_mss.reparto', string='Compania de reparto')
 
     def name_get(self):
