@@ -32,6 +32,12 @@ class entrega(models.Model):
     producto_id = fields.Many2many('modulo1_mss.producto',string='Producto')
     reparto_id = fields.Many2one('modulo2_mss.reparto', string='Compania de reparto')
 
+    def name_get(self):
+        listaEntregas = []
+        for entrega in self:
+            listaEntregas.append((entrega.id,entrega.refEntrega))
+        return listaEntregas
+
     @api.constrains('fechaEntrega')
     def _checkFechaEntrega(self):
         hoy = date.today()
@@ -57,3 +63,9 @@ class reparto(models.Model):
     paisR = fields.Char(string='Pais', required=True)
 
     entrega_id = fields.One2many('modulo2_mss.entrega','reparto_id', string='Entrega')
+
+    def name_get(self):
+        listaReparto = []
+        for reparto in self:
+            listaReparto.append((reparto.id,reparto.nombreR))
+        return listaEntregas
