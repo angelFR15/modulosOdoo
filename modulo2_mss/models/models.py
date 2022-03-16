@@ -54,6 +54,8 @@ class entrega(models.Model):
             else:
                 entrega.entregaRealizada = False
 
+    @api.
+
 class reparto(models.Model):
     _name = 'modulo2_mss.reparto'
     _description = 'Define los atributos de la compañia de reparto.'
