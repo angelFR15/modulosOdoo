@@ -65,7 +65,7 @@ class reparto(models.Model):
     entrega_id = fields.One2many('modulo2_mss.entrega','reparto_id', string='Entrega')
 
     def name_get(self):
-        listaReparto = []
+        listaRepartos = []
         for reparto in self:
-            listaReparto.append((reparto.id,reparto.nombreR))
-        return listaEntregas
+            listaRepartos.append((reparto.id,reparto.nombreR))
+        return listaRepartos
