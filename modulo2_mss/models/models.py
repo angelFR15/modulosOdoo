@@ -53,6 +53,12 @@ class entrega(models.Model):
                 entrega.entregaRealizada = True
             else:
                 entrega.entregaRealizada = False
+    
+    @api.constrains('unidades')
+    def _checkUnidades(self):
+        for entrega in self:
+            if (entrega.unidades < 5):
+                raise exceptions.ValidationError("Le recordamos que las entregas siempre llevan más de 5 unidades.")
 
 class reparto(models.Model):
     _name = 'modulo2_mss.reparto'
