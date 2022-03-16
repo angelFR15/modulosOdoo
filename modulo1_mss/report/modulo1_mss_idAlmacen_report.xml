@@ -14,7 +14,7 @@
             <t t-foreach="docs" t-as="almacen">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h2>INFORME Almacen</h2>
+                        <h2>INFORME ALMACEN</h2>
                         <h3 t-field="almacen.refAlmacen"/>
                         <table class="table table-sm o_main_table">
                             <thead>
